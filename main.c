@@ -2,7 +2,7 @@
 #include <gb/gb.h>
 #include <gb/drawing.h>
 #include "game_loop.h"
-#include "sprite_loader.h"
+#include "sprite_util.h"
 
 
 

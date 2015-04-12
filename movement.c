@@ -1,16 +1,36 @@
 #include "movement.h"
+#include <stdio.h>
+void move_player(UBYTE joypad_state, Player* player) {
 
-void move(UBYTE joypad_state, UBYTE* x, UBYTE* y) {
 	if (joypad_state == J_RIGHT) {
-		(*x)++;
+		if(player->direction != EAST){
+			load_new_tile(player->sprite_pos, PLAYER_LOOKING_RIGHT);
+		}
+		(player->direction) = EAST;
+		(player->x)++;
 	}
 	else if (joypad_state == J_LEFT) {
-		(*x)--;
+		if(player->direction != WEST){
+			load_new_tile(player->sprite_pos, PLAYER_LOOKING_RIGHT);
+			flip_sprite_horizontally(player->sprite_pos);
+		}
+		(player->direction) = WEST;
+		(player->x)--;
 	}
 	else if (joypad_state == J_UP) {
-		(*y)--;
+		if(player->direction != NORTH){			
+			load_new_tile(player->sprite_pos, PLAYER_LOOKING_DOWN);
+			flip_sprite_vertically(player->sprite_pos);
+		}
+		(player->direction) = NORTH;
+		(player->y)--;
 	}
 	else if (joypad_state == J_DOWN) {
-		(*y)++;
+		if(player->direction != SOUTH){			
+			load_new_tile(player->sprite_pos, PLAYER_LOOKING_DOWN);
+		}
+		(player->direction) = SOUTH;
+		(player->y)++;		
+		
 	}
 }
