@@ -24,7 +24,7 @@ static void set_up_enemy_sprite(enemy_type enemy){
 
 static void set_up_player_sprite(){
 	Player* currentPlayer = get_current_player();
-	set_sprite_data(currentPlayer->sprite_pos,1,*(currentPlayer->sprite_tiles));
+	set_sprite_data(currentPlayer->sprite_pos,1,currentPlayer->sprite_tiles);
 }
 
 void set_up_sprites(){

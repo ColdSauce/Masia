@@ -13,7 +13,7 @@ typedef struct Player {
 	unsigned char current_level;
 	unsigned int experience;
 	unsigned char created;
-	unsigned char** sprite_tiles;
+	unsigned char* sprite_tiles;
 } Player;
 
 extern Player* get_current_player();
