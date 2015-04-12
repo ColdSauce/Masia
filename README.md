@@ -1,6 +1,3 @@
-# Masia
-Gameboy Color game written in C using the GBDK.
-
 # About
 Masia is a rouge like, hack & slash type game written to run on the Gameboy Color.
 
